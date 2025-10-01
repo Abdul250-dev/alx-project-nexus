@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthPathCoach - Marketing Presentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .presentation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .slide {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 20px 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideIn 0.8s ease forwards;
+        }
+
+        .slide:nth-child(even) {
+            animation-delay: 0.2s;
+        }
+
+        .slide:nth-child(odd) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes slideIn {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .header {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.5em;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .tech-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #e8f0ff;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            border-color: #667eea;
+            transform: scale(1.05);
+        }
+
+        .tech-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 20px 10px;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 40px 0;
+            width: 50%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 40px;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 40px;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 0;
+            height: 0;
+            border: 15px solid transparent;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -30px;
+            border-left-color: white;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -30px;
+            border-right-color: white;
+        }
+
+        .icon {
+            font-size: 2em;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid #e8f0ff;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: bold;
+        }
+
+        .comparison-table tr:hover {
+            background: #f8f9ff;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .section-title {
+                font-size: 2em;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 50px !important;
+                padding-right: 0 !important;
+                text-align: left !important;
+            }
+            
+            .timeline-content::before {
+                left: -30px !important;
+                border-right-color: white !important;
+                border-left-color: transparent !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Header Slide -->
+        <div class="header">
+            <h1>🏥 HealthPathCoach</h1>
+            <div class="subtitle">Revolutionary Mobile Health Platform</div>
+            <p style="margin-top: 20px; font-size: 1.2em; opacity: 0.8;">
+                Empowering Women's Health Through Advanced Technology
+            </p>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="slide">
+            <h2 class="section-title">📊 Executive Summary</h2>
+            <div class="highlight">
+                <h3>Market Opportunity: $51.3B → $79.3B (2023-2030)</h3>
+                <p>HealthPathCoach transforms women's reproductive health management through AI-powered mobile technology, targeting the rapidly growing $79.3B women's health market.</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">$79.3B</div>
+                    <div class="stat-label">Market Size by 2030</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1M+</div>
+                    <div class="stat-label">Target Users</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Code Reusability</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Uptime</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Core Features -->
+        <div class="slide">
+            <h2 class="section-title">🚀 Core Features & Capabilities</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <span class="icon">📊</span>
+                    <h3>Comprehensive Health Tracking</h3>
+                    <p>Advanced menstrual cycle prediction, nutrition monitoring, mood analytics, and sleep optimization with AI-powered insights.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="icon">🎓</span>
+                    <h3>Educational Platform</h3>
+                    <p>Interactive learning modules, contraception education, health topics, quizzes, and personalized learning paths.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="icon">🤖</span>
+                    <h3>AI-Powered Chatbot</h3>
+                    <p>24/7 intelligent health assistant with natural language processing, symptom analysis, and personalized recommendations.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="icon">🔔</span>
+                    <h3>Smart Reminder System</h3>
+                    <p>Intelligent notifications, medication reminders, health check-up alerts, and customizable scheduling.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="icon">👤</span>
+                    <h3>User Management</h3>
+                    <p>Secure authentication, biometric login, comprehensive profiles, and privacy controls with HIPAA compliance.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="icon">📱</span>
+                    <h3>Cross-Platform</h3>
+                    <p>Native iOS, Android, and Web applications with seamless synchronization and offline capabilities.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technology Stack -->
+        <div class="slide">
+            <h2 class="section-title">🛠️ Technology Excellence</h2>
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <h4>React Native 0.79</h4>
+                    <p>Cross-platform mobile development</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Firebase 11.8</h4>
+                    <p>Backend-as-a-Service</p>
+                </div>
+                <div class="tech-item">
+                    <h4>TypeScript</h4>
+                    <p>Type-safe development</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Expo SDK 53</h4>
+                    <p>Development platform</p>
+                </div>
+                <div class="tech-item">
+                    <h4>React 19.0</h4>
+                    <p>Latest frontend framework</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Next.js</h4>
+                    <p>Web application framework</p>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <h3>🏗️ Architecture Highlights</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li>✅ Scalable Microservices Architecture</li>
+                    <li>✅ Real-time Data Synchronization</li>
+                    <li>✅ Offline-First Design</li>
+                    <li>✅ Enterprise-Grade Security</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Business Model -->
+        <div class="slide">
+            <h2 class="section-title">💰 Business Model & Revenue Streams</h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Revenue Stream</th>
+                        <th>Pricing</th>
+                        <th>Target Market</th>
+                        <th>Revenue Potential</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Freemium Model</strong></td>
+                        <td>Free + Premium $9.99/mo</td>
+                        <td>Individual Users</td>
+                        <td>$35M (Year 3)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Healthcare Partnerships</strong></td>
+                        <td>Integration Fees</td>
+                        <td>Medical Practices</td>
+                        <td>$15M (Year 3)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Enterprise Solutions</strong></td>
+                        <td>Custom Pricing</td>
+                        <td>Corporate Wellness</td>
+                        <td>$20M (Year 3)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Content Partnerships</strong></td>
+                        <td>Revenue Sharing</td>
+                        <td>Pharma Companies</td>
+                        <td>$10M (Year 3)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">$80M</div>
+                    <div class="stat-label">Total Revenue Potential</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">85%</div>
+                    <div class="stat-label">Gross Margin</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$15</div>
+                    <div class="stat-label">Customer Acquisition Cost</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$180</div>
+                    <div class="stat-label">Lifetime Value</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Market Analysis -->
+        <div class="slide">
+            <h2 class="section-title">🎯 Target Market Analysis</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>👩 Individual Users (B2C)</h3>
+                    <p><strong>Demographics:</strong> Women 18-45, health-conscious, tech-savvy</p>
+                    <p><strong>Market Size:</strong> 500M+ globally</p>
+                    <p><strong>Pain Points:</strong> Lack of personalized health guidance, fragmented tools</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🏥 Healthcare Providers (B2B)</h3>
+                    <p><strong>Target:</strong> Gynecologists, OB/GYNs, Family Medicine</p>
+                    <p><strong>Market Size:</strong> 200K+ practices globally</p>
+                    <p><strong>Pain Points:</strong> Patient engagement, data collection, follow-up care</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🏢 Corporate Wellness (B2B2C)</h3>
+                    <p><strong>Target:</strong> HR departments, Insurance companies</p>
+                    <p><strong>Market Size:</strong> $50B+ corporate wellness market</p>
+                    <p><strong>Pain Points:</strong> Employee health costs, engagement programs</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Competitive Advantage -->
+        <div class="slide">
+            <h2 class="section-title">🏆 Competitive Advantage</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>🔬 Technology Leadership</h3>
+                        <p>Latest React Native, AI integration, real-time sync, offline capability</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>🎨 User Experience Excellence</h3>
+                        <p>Intuitive design, AI-driven personalization, accessibility-first, sub-second performance</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>📊 Data Intelligence</h3>
+                        <p>Predictive analytics, pattern recognition, trend analysis, risk assessment</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>🔒 Security & Privacy</h3>
+                        <p>Enterprise-grade security, HIPAA compliance, end-to-end encryption</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Go-to-Market Strategy -->
+        <div class="slide">
+            <h2 class="section-title">🚀 Go-to-Market Strategy</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Phase 1: Launch (Months 1-3)</h3>
+                        <p>Soft launch with 1,000 beta users, App Store optimization, influencer partnerships, content marketing</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Phase 2: Growth (Months 4-12)</h3>
+                        <p>User acquisition campaigns, healthcare partnerships, feature expansion, international expansion</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Phase 3: Scale (Year 2)</h3>
+                        <p>Enterprise solutions, API marketplace, advanced analytics, global expansion</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Financial Projections -->
+        <div class="slide">
+            <h2 class="section-title">📈 Financial Projections</h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Users</th>
+                        <th>Revenue</th>
+                        <th>Growth Rate</th>
+                        <th>Market Share</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Year 1</strong></td>
+                        <td>50,000</td>
+                        <td>$2.5M</td>
+                        <td>-</td>
+                        <td>0.1%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Year 2</strong></td>
+                        <td>200,000</td>
+                        <td>$12M</td>
+                        <td>380%</td>
+                        <td>0.5%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Year 3</strong></td>
+                        <td>500,000</td>
+                        <td>$35M</td>
+                        <td>192%</td>
+                        <td>1.2%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Future Roadmap -->
+        <div class="slide">
+            <h2 class="section-title">🔮 Future Roadmap</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>📱 Short-term (6 months)</h3>
+                    <ul>
+                        <li>AI Enhancement</li>
+                        <li>Wearable Integration</li>
+                        <li>Telemedicine Features</li>
+                        <li>Advanced Analytics</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>🌍 Medium-term (12 months)</h3>
+                    <ul>
+                        <li>Healthcare Integration</li>
+                        <li>Insurance Partnerships</li>
+                        <li>Clinical Trials</li>
+                        <li>Mental Health Expansion</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>🚀 Long-term (24 months)</h3>
+                    <ul>
+                        <li>Global Expansion</li>
+                        <li>Enterprise Platform</li>
+                        <li>Research Partnerships</li>
+                        <li>AI Doctor Capabilities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="cta-section">
+            <h2>🎯 Ready to Transform Women's Health?</h2>
+            <p style="font-size: 1.3em; margin-bottom: 30px;">
+                Join us in revolutionizing healthcare technology with a $50M+ market opportunity
+            </p>
+            <button class="cta-button" onclick="alert('Contact: abdul250-dev@github.com')">
+                📞 Schedule Demo
+            </button>
+            <button class="cta-button" onclick="window.open('https://github.com/Abdul250-dev/alx-project-nexus', '_blank')">
+                🔗 View Repository
+            </button>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="slide">
+            <h2 class="section-title">📞 Contact Information</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>👨‍💻 Project Lead</h3>
+                    <p>Abdul250-dev</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔗 Repository</h3>
+                    <p><a href="https://github.com/Abdul250-dev/alx-project-nexus" target="_blank">GitHub - HealthPathCoach</a></p>
+                </div>
+                <div class="feature-card">
+                    <h3>📱 Platform</h3>
+                    <p>Cross-platform mobile application</p>
+                </div>
+                <div class="feature-card">
+                    <h3>✅ Status</h3>
+                    <p>Production-ready MVP</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling and animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate elements on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all slides
+            document.querySelectorAll('.slide').forEach(slide => {
+                observer.observe(slide);
+            });
+
+            // Add click effects to buttons
+            document.querySelectorAll('.cta-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1.1)';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
