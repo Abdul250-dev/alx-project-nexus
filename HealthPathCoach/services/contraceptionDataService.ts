@@ -1,0 +1,318 @@
+import { t } from "./localizationService"
+
+export type ContraceptionMethod = {
+    id: string
+    name: string
+    type: string
+    effectiveness: string
+    description: string
+    howItWorks: string
+    benefits: string[]
+    considerations: string[]
+    image: any
+}
+
+export const getContraceptionMethods = (): ContraceptionMethod[] => {
+    return [
+        {
+            id: "combined-pill",
+            name: t("contraception.combined_pill"),
+            type: "hormonal",
+            effectiveness: "91-99%",
+            description: t("contraception.combined_pill_description"),
+            howItWorks: t("contraception.combined_pill_how_it_works"),
+            benefits: [
+                t("contraception.combined_pill_benefit1"),
+                t("contraception.combined_pill_benefit2"),
+                t("contraception.combined_pill_benefit3"),
+                t("contraception.combined_pill_benefit4"),
+                t("contraception.combined_pill_benefit5"),
+            ],
+            considerations: [
+                t("contraception.combined_pill_consideration1"),
+                t("contraception.combined_pill_consideration2"),
+                t("contraception.combined_pill_consideration3"),
+                t("contraception.combined_pill_consideration4"),
+                t("contraception.combined_pill_consideration5"),
+            ],
+            image: require("../assets/images/contraception/combined-pill.png"),
+        },
+        {
+            id: "progestin-only-pill",
+            name: t("contraception.progestin_only_pill"),
+            type: "hormonal",
+            effectiveness: "91-99%",
+            description: t("contraception.progestin_only_pill_description"),
+            howItWorks: t("contraception.progestin_only_pill_how_it_works"),
+            benefits: [
+                t("contraception.progestin_only_pill_benefit1"),
+                t("contraception.progestin_only_pill_benefit2"),
+                t("contraception.progestin_only_pill_benefit3"),
+                t("contraception.progestin_only_pill_benefit4"),
+            ],
+            considerations: [
+                t("contraception.progestin_only_pill_consideration1"),
+                t("contraception.progestin_only_pill_consideration2"),
+                t("contraception.progestin_only_pill_consideration3"),
+                t("contraception.progestin_only_pill_consideration4"),
+            ],
+            image: require("../assets/images/contraception/progestin-only-pill.png"),
+        },
+        {
+            id: "male-condom",
+            name: t("contraception.male_condom"),
+            type: "barrier",
+            effectiveness: "85-98%",
+            description: t("contraception.male_condom_description"),
+            howItWorks: t("contraception.male_condom_how_it_works"),
+            benefits: [
+                t("contraception.male_condom_benefit1"),
+                t("contraception.male_condom_benefit2"),
+                t("contraception.male_condom_benefit3"),
+                t("contraception.male_condom_benefit4"),
+                t("contraception.male_condom_benefit5"),
+            ],
+            considerations: [
+                t("contraception.male_condom_consideration1"),
+                t("contraception.male_condom_consideration2"),
+                t("contraception.male_condom_consideration3"),
+                t("contraception.male_condom_consideration4"),
+            ],
+            image: require("../assets/images/contraception/male-condom.png"),
+        },
+        {
+            id: "female-condom",
+            name: t("contraception.female_condom"),
+            type: "barrier",
+            effectiveness: "79-95%",
+            description: t("contraception.female_condom_description"),
+            howItWorks: t("contraception.female_condom_how_it_works"),
+            benefits: [
+                t("contraception.female_condom_benefit1"),
+                t("contraception.female_condom_benefit2"),
+                t("contraception.female_condom_benefit3"),
+                t("contraception.female_condom_benefit4"),
+                t("contraception.female_condom_benefit5"),
+            ],
+            considerations: [
+                t("contraception.female_condom_consideration1"),
+                t("contraception.female_condom_consideration2"),
+                t("contraception.female_condom_consideration3"),
+                t("contraception.female_condom_consideration4"),
+            ],
+            image: require("../assets/images/contraception/female-condom.png"),
+        },
+        {
+            id: "hormonal-iud",
+            name: t("contraception.hormonal_iud"),
+            type: "long-acting",
+            effectiveness: "99%",
+            description: t("contraception.hormonal_iud_description"),
+            howItWorks: t("contraception.hormonal_iud_how_it_works"),
+            benefits: [
+                t("contraception.hormonal_iud_benefit1"),
+                t("contraception.hormonal_iud_benefit2"),
+                t("contraception.hormonal_iud_benefit3"),
+                t("contraception.hormonal_iud_benefit4"),
+                t("contraception.hormonal_iud_benefit5"),
+            ],
+            considerations: [
+                t("contraception.hormonal_iud_consideration1"),
+                t("contraception.hormonal_iud_consideration2"),
+                t("contraception.hormonal_iud_consideration3"),
+                t("contraception.hormonal_iud_consideration4"),
+                t("contraception.hormonal_iud_consideration5"),
+            ],
+            image: require("../assets/images/contraception/hormonal-iud.png"),
+        },
+        {
+            id: "copper-iud",
+            name: t("contraception.copper_iud"),
+            type: "long-acting",
+            effectiveness: "99%",
+            description: t("contraception.copper_iud_description"),
+            howItWorks: t("contraception.copper_iud_how_it_works"),
+            benefits: [
+                t("contraception.copper_iud_benefit1"),
+                t("contraception.copper_iud_benefit2"),
+                t("contraception.copper_iud_benefit3"),
+                t("contraception.copper_iud_benefit4"),
+                t("contraception.copper_iud_benefit5"),
+            ],
+            considerations: [
+                t("contraception.copper_iud_consideration1"),
+                t("contraception.copper_iud_consideration2"),
+                t("contraception.copper_iud_consideration3"),
+                t("contraception.copper_iud_consideration4"),
+                t("contraception.copper_iud_consideration5"),
+            ],
+            image: require("../assets/images/contraception/copper-iud.png"),
+        },
+        {
+            id: "implant",
+            name: t("contraception.contraceptive_implant"),
+            type: "long-acting",
+            effectiveness: "99%",
+            description: t("contraception.contraceptive_implant_description"),
+            howItWorks: t("contraception.contraceptive_implant_how_it_works"),
+            benefits: [
+                t("contraception.contraceptive_implant_benefit1"),
+                t("contraception.contraceptive_implant_benefit2"),
+                t("contraception.contraceptive_implant_benefit3"),
+                t("contraception.contraceptive_implant_benefit4"),
+                t("contraception.contraceptive_implant_benefit5"),
+            ],
+            considerations: [
+                t("contraception.contraceptive_implant_consideration1"),
+                t("contraception.contraceptive_implant_consideration2"),
+                t("contraception.contraceptive_implant_consideration3"),
+                t("contraception.contraceptive_implant_consideration4"),
+                t("contraception.contraceptive_implant_consideration5"),
+            ],
+            image: require("../assets/images/contraception/implant.png"),
+        },
+        {
+            id: "injection",
+            name: t("contraception.contraceptive_injection"),
+            type: "hormonal",
+            effectiveness: "94-99%",
+            description: t("contraception.contraceptive_injection_description"),
+            howItWorks: t("contraception.contraceptive_injection_how_it_works"),
+            benefits: [
+                t("contraception.contraceptive_injection_benefit1"),
+                t("contraception.contraceptive_injection_benefit2"),
+                t("contraception.contraceptive_injection_benefit3"),
+                t("contraception.contraceptive_injection_benefit4"),
+                t("contraception.contraceptive_injection_benefit5"),
+            ],
+            considerations: [
+                t("contraception.contraceptive_injection_consideration1"),
+                t("contraception.contraceptive_injection_consideration2"),
+                t("contraception.contraceptive_injection_consideration3"),
+                t("contraception.contraceptive_injection_consideration4"),
+                t("contraception.contraceptive_injection_consideration5"),
+            ],
+            image: require("../assets/images/contraception/injection.png"),
+        },
+        {
+            id: "patch",
+            name: t("contraception.patch"),
+            type: "hormonal",
+            effectiveness: "91-99%",
+            description: t("contraception.patch_description"),
+            howItWorks: t("contraception.patch_how_it_works"),
+            benefits: [
+                t("contraception.patch_benefit1"),
+                t("contraception.patch_benefit2"),
+                t("contraception.patch_benefit3"),
+                t("contraception.patch_benefit4"),
+                t("contraception.patch_benefit5"),
+            ],
+            considerations: [
+                t("contraception.patch_consideration1"),
+                t("contraception.patch_consideration2"),
+                t("contraception.patch_consideration3"),
+                t("contraception.patch_consideration4"),
+                t("contraception.patch_consideration5"),
+            ],
+            image: require("../assets/images/contraception/patch.png"),
+        },
+        {
+            id: "vaginal-ring",
+            name: t("contraception.vaginal_ring"),
+            type: "hormonal",
+            effectiveness: "91-99%",
+            description: t("contraception.vaginal_ring_description"),
+            howItWorks: t("contraception.vaginal_ring_how_it_works"),
+            benefits: [
+                t("contraception.vaginal_ring_benefit1"),
+                t("contraception.vaginal_ring_benefit2"),
+                t("contraception.vaginal_ring_benefit3"),
+                t("contraception.vaginal_ring_benefit4"),
+                t("contraception.vaginal_ring_benefit5"),
+            ],
+            considerations: [
+                t("contraception.vaginal_ring_consideration1"),
+                t("contraception.vaginal_ring_consideration2"),
+                t("contraception.vaginal_ring_consideration3"),
+                t("contraception.vaginal_ring_consideration4"),
+                t("contraception.vaginal_ring_consideration5"),
+            ],
+            image: require("../assets/images/contraception/vaginal-ring.png"),
+        },
+        {
+            id: "emergency-pill",
+            name: t("contraception.emergency_pill"),
+            type: "emergency",
+            effectiveness: "75-89%",
+            description: t("contraception.emergency_pill_description"),
+            howItWorks: t("contraception.emergency_pill_how_it_works"),
+            benefits: [
+                t("contraception.emergency_pill_benefit1"),
+                t("contraception.emergency_pill_benefit2"),
+                t("contraception.emergency_pill_benefit3"),
+                t("contraception.emergency_pill_benefit4"),
+                t("contraception.emergency_pill_benefit5"),
+            ],
+            considerations: [
+                t("contraception.emergency_pill_consideration1"),
+                t("contraception.emergency_pill_consideration2"),
+                t("contraception.emergency_pill_consideration3"),
+                t("contraception.emergency_pill_consideration4"),
+                t("contraception.emergency_pill_consideration5"),
+            ],
+            image: require("../assets/images/contraception/emergency-pill.png"),
+        },
+        {
+            id: "sterilization-female",
+            name: t("contraception.sterilization_female"),
+            type: "permanent",
+            effectiveness: "99.5%",
+            description: t("contraception.sterilization_female_description"),
+            howItWorks: t("contraception.sterilization_female_how_it_works"),
+            benefits: [
+                t("contraception.sterilization_female_benefit1"),
+                t("contraception.sterilization_female_benefit2"),
+                t("contraception.sterilization_female_benefit3"),
+                t("contraception.sterilization_female_benefit4"),
+                t("contraception.sterilization_female_benefit5"),
+            ],
+            considerations: [
+                t("contraception.sterilization_female_consideration1"),
+                t("contraception.sterilization_female_consideration2"),
+                t("contraception.sterilization_female_consideration3"),
+                t("contraception.sterilization_female_consideration4"),
+                t("contraception.sterilization_female_consideration5"),
+            ],
+            image: require("../assets/images/contraception/sterilization-female.png"),
+        },
+        {
+            id: "sterilization-male",
+            name: t("contraception.sterilization_male"),
+            type: "permanent",
+            effectiveness: "99.5%",
+            description: t("contraception.sterilization_male_description"),
+            howItWorks: t("contraception.sterilization_male_how_it_works"),
+            benefits: [
+                t("contraception.sterilization_male_benefit1"),
+                t("contraception.sterilization_male_benefit2"),
+                t("contraception.sterilization_male_benefit3"),
+                t("contraception.sterilization_male_benefit4"),
+                t("contraception.sterilization_male_benefit5"),
+            ],
+            considerations: [
+                t("contraception.sterilization_male_consideration1"),
+                t("contraception.sterilization_male_consideration2"),
+                t("contraception.sterilization_male_consideration3"),
+                t("contraception.sterilization_male_consideration4"),
+                t("contraception.sterilization_male_consideration5"),
+            ],
+            image: require("../assets/images/contraception/sterilization-male.png"),
+        },
+    ]
+}
+
+export const getContraceptionMethodById = (id: string): ContraceptionMethod | null => {
+    const methods = getContraceptionMethods()
+    return methods.find(method => method.id === id) || null
+} 

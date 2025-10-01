@@ -1,0 +1,57 @@
+Female User
+
+First Name: 	Partner
+Lat Name:   	TestF
+Email: 		partner.testf@test.com
+Password:	Partner@1306
+Age: 01-01-2000
+
+
+
+Male User
+
+First Name: 	Partner
+Lat Name:   	TestM
+Email: 		partner.testm@test.com
+Password:	Partner@1306
+Age: 		01-01-2000
+
+
+
+
+Female User
+
+First Name: 	Partner
+Lat Name:   	TestF1
+Email: 		partner.testf1@test.com
+Password:	Partner@1306
+Age: 01-01-2000
+
+
+
+Male User
+
+First Name: 	Partner
+Lat Name:   	TestM1
+Email: 		partner.testm1@test.com
+Password:	Partner@1306
+Age: 		01-01-2000
+
+
+Female User 2
+
+First Name: 	Partner
+Lat Name:   	TestF2
+Email: 		partner.testf2@test.com
+Password:	Partner@1306
+Age: 01-01-2000
+
+
+
+Male User 2
+
+First Name: 	Partner
+Lat Name:   	TestM2
+Email: 		partner.testm2@test.com
+Password:	Partner@1306
+Age: 		01-01-2000
