@@ -18,6 +18,7 @@
       },
       "edgeToEdgeEnabled": true,
       "package": "com.abdul250dev.HealthPathCoach",
+      "versionCode": 1,
       "permissions": [
         "android.permission.RECORD_AUDIO",
         "android.permission.MODIFY_AUDIO_SETTINGS"
